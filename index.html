@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Stiker/Timeline Line</title>
+</head>
+<style>
+    a:link,
+    a:visited {
+        background-color: hsl(234, 95%, 62%);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover,
+    a:active {
+        background-color: hsl(234, 95%, 66%);
+    }
+</style>
+
+<body>
+    <center>
+        <h2><code>Download media line dengan mudah.</code></h2>
+        <p><input id="urlTimeline" type="text" placeholder="Masukkan link url line"
+            size="50"></p>
+        <a onclick="onGetTimeline()" href="javascript:;">Ambil Media</a><br>
+        <p id="link_download"></p>
+        <div style="margin-top: 20px;">
+            <span>Example : https://timeline.line.me/post/1162777602901016295</span>
+        </div>
+        <div style="margin-top: 20px;">
+            <span>Source : https://github.com/userbiasa/line-video</span>
+        </div>
+    </center>
+</body>
+
+</html>
+<script src="timeline.js"></script>
