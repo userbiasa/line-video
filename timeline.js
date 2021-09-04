@@ -5,13 +5,10 @@ async function onGetTimeline() {
         const url = "https://api.allorigins.win/raw?url=" + encodeURIComponent(document.getElementById("urlTimeline").value);
         const htmlString = (await (await fetch(url)).text());
         const html = new DOMParser().parseFromString(htmlString, "text/html");
-        document.getElementById('link_download').innerHTML = `<p>Extract JSON from ${url}</p>`;
         const json = JSON.parse(html.getElementById("__NEXT_DATA__").textContent);
         const feeds = Object.values(json.props?.pageProps?.initialState?.api?.feeds || {});
-        const hasil = [], total = feeds.length;
-        document.getElementById('link_download').innerHTML = "<p>[Progress] 0% get media from JSON.</p>";
-        feeds.forEach(({ post }, i) => {
-            document.getElementById('link_download').innerHTML = `<p>[Progress] ${(100*i)/total | 0}% get media from JSON.</p>`;
+        const hasil = [];
+        feeds.forEach(({ post }) => {
             let media = post?.contents?.media;
             Array.isArray(media) && media.forEach(({ type, resourceId }) => {
                 type == "VIDEO" ?
