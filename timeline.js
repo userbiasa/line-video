@@ -5,7 +5,7 @@ async function onGetTimeline() {
         const url = "https://apiorigins.herokuapp.com/?url=" + encodeURIComponent(document.getElementById("urlTimeline").value);
         const htmlString = (await (await fetch(url)).text());
         const html = new DOMParser().parseFromString(htmlString, "text/html");
-        const json = JSON.parse(html.getElementById("__NEXT_DATA__").textContent);
+        const json = JSON.parse(html.getElementById("__NEXT_DATA__")?.textContent || "{}");
         const feeds = Object.values(json.props?.pageProps?.initialState?.api?.feeds || {});
         const hasil = [];
         feeds.forEach(({ post }) => {
