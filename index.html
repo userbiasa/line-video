@@ -8,8 +8,8 @@
     <title>Download Timeline Line</title>
 </head>
 <style>
-    a:link,
-    a:visited {
+    a.link:link,
+    a.link:visited {
         background-color: hsl(234, 95%, 62%);
         color: white;
         padding: 14px 25px;
@@ -18,8 +18,8 @@
         display: inline-block;
     }
 
-    a:hover,
-    a:active {
+    a.link:hover,
+    a.link:active {
         background-color: hsl(234, 95%, 66%);
     }
 </style>
@@ -29,13 +29,16 @@
         <h2><code>Download media line dengan mudah.</code></h2>
         <p><input id="urlTimeline" type="text" placeholder="Masukkan link url line"
             size="50"></p>
-        <a onclick="onGetTimeline()" href="javascript:;">Ambil Media</a><br>
+        <a onclick="onGetTimeline()" class="link" href="javascript:;">Ambil Media</a><br>
         <p id="link_download"></p>
         <div style="margin-top: 20px;">
             <span>Example : https://timeline.line.me/post/1162777602901016295</span>
         </div>
         <div style="margin-top: 20px;">
             <span>Source : https://github.com/userbiasa/line-video</span>
+        </div>
+        <div style="margin-top: 20px;">
+            <a href="https://line-video.herokuapp.com/">Gunakan ui versi baru</a>
         </div>
     </center>
 </body>
